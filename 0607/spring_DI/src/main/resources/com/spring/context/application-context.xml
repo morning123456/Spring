@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sum" class="com.spring.module.Summation"/>
+	<bean id="extraSum" class="com.spring.module.ExtraSummation"/>
+	<bean id="min" class="com.spring.module.Minus"/>
+	<bean id="multi" class="com.spring.module.Multiplex"/>
+	<bean id="div" class="com.spring.module.Divide"/>
+	
+	<bean id="cal" class="com.spring.cal.Calculator">
+		<property name="sum" ref="extraSum" />
+		<property name="min" ref="min" />
+		<property name="multi" ref="multi" />
+		<property name="div" ref="div" />
+	</bean>
+
+</beans>
